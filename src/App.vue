@@ -1,15 +1,14 @@
 <template>
   <div id="app">
-    <Data></Data>
-    <div class="chart-block">
-      <GroupedBar
-        :series="series"
-        :categories="categories"
-        :colors="colors"
-        :horizontal="horizontal"
-        :key="selected"
-      />
-    </div>
+    <Data v-if="this.$store.state.isShow"></Data>
+    <GroupedBar
+      v-else
+      :series="series"
+      :categories="categories"
+      :colors="colors"
+      :horizontal="horizontal"
+      :key="selected"
+    />
   </div>
 </template>
 
@@ -35,11 +34,11 @@ export default {
       return [
         {
           name: "Todo App",
-          data: [3, 2, 2, 0, 0, 0, 0],
+          data: this.$store.state.stars[0],
         },
         {
           name: "Simple Calculator",
-          data: [3, 1, 3, 2, 1, 0],
+          data: this.$store.state.stars[1],
         },
       ];
     },
