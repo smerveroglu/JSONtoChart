@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <button id="btn" @click="getData">CHART</button>
-  </div>
+  <div><button id="btn" @click="getData">Chart</button></div>
 </template>
 
 <script>
@@ -47,6 +45,7 @@ export default {
         });
         this.stars.push(s);
       });
+      this.$store.state.isShow = !this.$store.state.isShow;
     },
   },
 };

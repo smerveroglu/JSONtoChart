@@ -7,6 +7,7 @@ export const store = new Vuex.Store({
   state: {
     tutorials: [],
     pages: [],
-    stars: []
+    stars: [],
+    isShow: true
   }
 });
